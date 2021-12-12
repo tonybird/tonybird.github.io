@@ -4,3 +4,6 @@
 
 layout: home
 ---
+- [email](mailto:tony@antoniobird.com)
+- [github](https://github.com/tonybird)
+
