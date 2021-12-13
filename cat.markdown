@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Clem
 permalink: /cat/
 ---
 
