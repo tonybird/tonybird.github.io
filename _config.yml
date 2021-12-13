@@ -31,12 +31,6 @@ google_analytics: "G-Z8551WJ06W"
 remote_theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
-defaults:
-  - scope:
-      path: "assets/img"
-    values:
-      image: true
-
 
 theme_config:
   appearance: "light" # can be "light", "dark" or "auto"

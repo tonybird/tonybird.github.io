@@ -8,4 +8,4 @@ layout: home
 
 💼 [linkedin](https://www.linkedin.com/in/tonybird)
 
-🐈 [cat](/assets/img/clem.jpeg)
+🐈 [cat](/cat)
