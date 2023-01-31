@@ -8,4 +8,4 @@ layout: home
 
 💼 [linkedin](https://www.linkedin.com/in/tonybird)
 
-🐈 [cat](/cat)
+🐈 [cats](/cats)
