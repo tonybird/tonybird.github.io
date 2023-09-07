@@ -29,6 +29,9 @@
         
                 var titlesHtml = "";
                 var postersHtml = "";
+                if (!movies || movies.length === 0) {
+                    titlesHtml = "No movies found :(";
+                }
                 movies.forEach(movie => {
                     postersHtml += movie.content.match(posterRegex)[0]
                     titlesHtml += "<li>" + movie.title + "</li>"
