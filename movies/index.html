@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Movies I've watched in ...</title>
+        <style>
+            body {
+                font-family: "Courier New", Courier, monospace; 
+                margin: 50px;
+            }
+            img {
+                height: 150px;
+            }
+            #posters {
+                float: right;
+                margin-left: 50px;
+                width: 60%;
+                margin-bottom: 50px;
+            }
+        </style>
+        <script>
+            const year = new Date().getFullYear();
+            const movieFeed = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fletterboxd.com%2Ftonybird%2Frss%2F&api_key=wbgraqj8p4lce9gerdgctdfcb5nl8uupspw3aghp&count=1000";
+            const posterRegex = /<img src="(https:\/\/a.ltrbxd.com\/.*.jpg).*">/g
+            const watchDateRegex = new RegExp("<p>Watched on .*, " + year +".</p>");
+        
+            const fetchMovies = async () => {
+                const response = await fetch(movieFeed);
+                const json = await response.json();
+                const movies = json.items.filter(movie => movie.content.match(watchDateRegex)).reverse();
+        
+                var titlesHtml = "";
+                var postersHtml = "";
+                movies.forEach(movie => {
+                    postersHtml += movie.content.match(posterRegex)[0]
+                    titlesHtml += "<li>" + movie.title + "</li>"
+                });
+
+                const header = `Movies I've watched in ${year}`;
+                document.title = header;
+                document.getElementById("header").innerHTML = header;
+                document.getElementById("posters").innerHTML = postersHtml;
+                document.getElementById("titles").innerHTML = titlesHtml;
+            }
+            fetchMovies();
+        </script>
+    </head>
+    <body>
+        <div id="posters"></div>
+        <div>
+            <h2 id="header">Movies I've watched in ...</h2>
+            <p>(in no particular order)</p>
+            <ol id="titles">... loading ...</ol>
+            <p><a href="https://letterboxd.com/tonybird/">letterboxd.com/tonybird</a></p>
+        </div>
+    </body>
+</html>
