@@ -37,6 +37,7 @@
                     selector.appendChild(option);
                 }
                 selector.hidden = false;
+                selector.disabled = true;
                 selector.addEventListener("change", event => selectYear(event.target.value));
                 selectYear(thisYear);
             }
