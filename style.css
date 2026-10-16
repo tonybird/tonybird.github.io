@@ -1,0 +1,54 @@
+html {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #050505;
+  color: #d8d8d8;
+}
+
+#sky {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fade 2.5s ease-out both;
+}
+
+main {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  animation: emerge 4s ease-out 1.5s both;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+}
+
+@keyframes emerge {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sky,
+  main {
+    animation: none;
+  }
+}
